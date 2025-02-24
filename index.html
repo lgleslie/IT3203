@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HTML Site</title>
-  <mets charset="utf-8"
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      box-sizing:border-box
-    }
-    body {font-family: Arial;}
-    header {
-      background-color: #666
-      padding: 30px;
-      text-align: center;
-      font-size: 35px:
-      color: white;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-     article {
-       float: left;
-       padding: 20px
-       width: 70%
-       backgorund-color: #f1f1f1
-     }
-    section: :after {
-      content: "";
-      display: table;
-      clear: both
-    footer {
-      background:#777;
-      padding: 10px
-      text-align: center;
-      color: white;
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
+<title>HTML Site</title>
+<meta charset="utf-8"
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing:border-box
+}
+body {
+  font-family: Arial;
+}
+header {
+  background-color: #666
+  padding: 30px;
+  text-align: center;
+  font-size: 35px:
+  color: white;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+article {
+  float: left;
+  padding: 20px
+  width: 70%
+  backgorund-color: #f1f1f1
+}
+section::after {
+content: "";
+display: table;
+clear: both
+footer {
+  background:#777;
+  padding: 10px
+  text-align: center;
+  color: white;
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
   }
-  </style>
+}
+</style>
 </head>
 <body>
-  <header>
-    <h2>All About HTML</h2>
-  </header>
-  <section>
-    <nav>
-      <ul>
-        <li><a href="#">History</a></li>
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-      </ul>
-    </nav>
+<header>
+  <h2>All About HTML</h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">History</a></li>
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+    </ul>
+  </nav>
 
-    <article>
-      <h1>History</h1>
+  <article>
+    <h1>History</h1>
       <p>HTML was created long ago</p>
     </article>
-  </section>
-  <footer>
-    <p>Credits</p>
-  </footer>
+</section>
+<footer>
+  <p>Credits</p>
+</footer>
 </body>
 </html>
