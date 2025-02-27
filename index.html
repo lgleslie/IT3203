@@ -1,70 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>HTML Site</title>
-<meta charset="utf-8"
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+.container {
+  display: grid;
+  grid-template-areas:
+    "menu content"
+  grid-template-columns: 1fr 3fr;
+  gap: 5xp;
+}
+.container> div.menu {
+  grid area: menu;
+}
+.container> div.content {
+  grid-area: content;
+} 
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: Arial;
+  margin: 0;
 }
-header {
-  background-color: #666
-  padding: 30px;
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
   text-align: center;
-  font-size: 35px:
-  color: white;
 }
-nav ul {
-  list-style-type: none;
-  padding: 0;
+.topnav {
+  overflow: hidden;
+  background-color: #333;
 }
-article {
+.topnav a {
   float: left;
-  padding: 20px
-  width: 70%
-  backgorund-color: #f1f1f1
-}
-section::after {
-content: "";
-display: table;
-clear: both
-footer {
-  background:#777;
-  padding: 10px
+  display: block;
+  color: #f2f2f2;
   text-align: center;
-  color: white;
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
+  padding: 14px 16px;
+  text-decloration: none;
+}
+  
+.topnav a:hovor {
+  background-color: #ddd;
+  color: black;
+}
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
 }
 </style>
 </head>
 <body>
-<header>
-  <h2>All About HTML</h2>
-</header>
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">History</a></li>
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-    </ul>
-  </nav>
+  
+<div class="header">
+  <h1>ALL ABOUT HTML</h1>
+</div>
 
-  <article>
-    <h1>History</h1>
-      <p>HTML was created long ago</p>
-    </article>
-</section>
-<footer>
-  <p>Credits</p>
-</footer>
+<div class="topnav">
+  <a href="#">Hisotry</a>
+  <a href="#">HTML</a>
+  <a href="#">CSS</a>
+</div>
+  
+<div class="container">
+  <div class="menu"><a href="#">point 1</a><br><a href="#">point 2</a><br><a href="#">point3</a></div>
+  <div class="content"><h3> HTML History</h3><p>Html started long ago.</p></div>
+</div>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+  
 </body>
 </html>
