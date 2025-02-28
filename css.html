@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML Site</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.container {
+  display: grid;
+  grid-template-areas:
+    "menu content";
+  grid-template-columns: 1fr 3fr;
+  gap: 5px;
+  background-color: LightGray;
+  padding: 5px;
+}
+.container > div {
+  background-color: White;
+  padding: 10px;
+}
+.container > div.menu {
+  grid-area: menu;
+}
+.container > div.content {
+  grid-area: content;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+  
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  
+<div class="header">
+  <h1>ALL ABOUT HTML</h1>
+</div>
+  
+<div class="topnav">
+    <a href="#">History</a>
+    <a href="#">HTML</a>
+    <a href="#">CSS</a>
+</div>
+  
+<div class="container">
+  <div class="menu"><a href="#">Link 1</a><br><a href="#">Link 2</a><br><a href="#">Link 3</a></div>
+  
+  <div class="content" 
+    <h2>CSS</h2>
+    <p>All about CSS</p>
+  </div> 
+</div>
+  
+<div class="footer">
+  <p>Footer</p>
+</div>
+  
+</body>
+</html>
