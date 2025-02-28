@@ -5,6 +5,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+.container {
+  display: grid;
+  grid-template-areas:
+    "menu content"
+    grid-template-columns: 1fr 3fr
+    gap: 5px
+    background color: black;
+  padding: 5px;
+}
+.container > div {
+  background-color: rgba(225, 255, 255, 0.8)
+  padding: 10px;
+}
+.container > div.menu {
+  grid-area: menu;
+}
+.container > div.content {
+  grid-area: content;
+}
 * {
   box-sizing: border-box;
 }
@@ -16,11 +35,11 @@ body {
   padding: 20px;
   text-align: center;
 }
-.topnav {
+.container > div.topnav {
   overflow: hidden;
   background-color: #333;
 }
-.topnav a {
+.container > div.topnav a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -29,26 +48,9 @@ body {
   text-decoration: none;
 }
   
-.topnav a:hover {
+.container > div.topnav a:hover {
   background-color: #ddd;
   color: black;
-}
-.column {
-  float: left;
-  padding: 10px
-}
-.column.middle {
-  width: 75%;
-}
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media screen and (max-width: 600px) {
-  .column.middle {
-  width: 100%;
-  }
 }
 .footer {
   background-color: #f1f1f1;
@@ -62,20 +64,18 @@ body {
 <div class="header">
   <h1>ALL ABOUT HTML</h1>
 </div>
-
-<div class="topnav">
-  <a href="#">History</a>
-  <a href="#">HTML</a>
-  <a href="#">CSS</a>
-</div>
-
-<div class="row">
-  <div class="column">
+<div class="container">
+  <div class="topnav">
+    <a href="#">History</a>
+    <a href="#">HTML</a>
+    <a href="#">CSS</a>
+  </div>
+  <div class="menu">
     <h2>Sections</h2>
     <p><a href="#">links to subsection</a></p>
   </div>
-  <div class="column.middle">
-    <h2>HTML></h2>
+  <div class="content" 
+    <h2>HTML</h2>
     <p>In the evolution of technology the key components of the web are HTML/CSS, browser, Web server and URL.
       Among these fundamental elements of the web is HTML. Hypertext Markup Language (HTML) the fundamental language to describe a webpage. 
       Hypertext refers to text that is not linear and it contains links to other texts. 
@@ -83,7 +83,7 @@ body {
       HTML is the standard markup language to describe web pages and documents through the use of tags and web browsers render the given tags and 
       show the content in a more legible format (Jack G. Zheng, 2025). 
       HTML is important to the evolution of the web and one of the key elements that makes it what it is today.</p>
-  </div>
+  </div> 
 </div>
   
 <div class="footer">
@@ -92,3 +92,4 @@ body {
   
 </body>
 </html>
+
