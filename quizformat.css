@@ -26,7 +26,8 @@
   display: grid;
   grid-template-row: auto auto auto auto;
   gap: 20px;
-  text-align:center;
+  text-align: center;
+  align-items: center;
 }
 .question {
   font-size: 22px;
