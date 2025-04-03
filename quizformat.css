@@ -16,9 +16,7 @@
 }
 .container > div.content {
   grid-area: content;
-  *{
-    box-sizing: border-box;
-  }
+}
 .quiz-container {
   background: #2E5984;
   padding: 30px;
