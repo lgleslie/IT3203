@@ -35,6 +35,7 @@
   <div id="result"></div>
   <button id="next">Next Question</button>
 </div>
+  
 <script>
   const quizData = [
     {
@@ -46,7 +47,7 @@
       question: "Which tag is used to make text bold?",
       answers: ["<stong>", "<em>", "<bold", "<bld>"],
       correct: 0
-    },
+    }
   ];
   let currentQuestion = 0;
   let score = 0;
@@ -80,12 +81,12 @@
       if (idx === correctIndex) {
         btn.classList.add("correct");
       } else {
-        btn.classList.add("wrong");
+        btn.classList.add("incorrect");
       }
     });
 
-    if (selectedIndex == correctIndex) {
-      resultEl.textContend = "Correct!";
+    if (selectedIndex === correctIndex) {
+      resultEl.textContent = "Correct!";
       score++;
     } else {
       resultEl.textContent = "Incorrect!";
@@ -93,7 +94,7 @@
     next.style.display = "inline-block";
   }
   next.onclick = () => {
-    currecntQuestion++;
+    currentQuestion++;
     if (currentQuestion < quizData.length) {
       loadQuestion();
     } else {
