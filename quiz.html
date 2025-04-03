@@ -4,7 +4,7 @@
 <title>HTML Site</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" href="quizformat.css">
 </head>
 <body>
   
@@ -29,6 +29,88 @@
   </div> 
 </div>
   
+<div class="quiz-container">
+  <div id="question" class="question"></div>
+  <div id="answers" class="answers"></div>
+  <div id="result"></div>
+  <button id="next">Next Question</button>
+</div>
+<script>
+  const quizData = [
+    {
+      qustion: "What does HTML stand for?",
+      answers: ["Hyper Text Markup Language","Option 2","Option 3","Option 4"],
+      correct: 0
+    },
+    {
+      question: "Which tag is used to make text bold?",
+      answers: ["<stong>", "<em>", "<bold", "<bld>"],
+      correct: 0
+    },
+  ];
+  let currentQuestion = 0;
+  let score = 0;
+
+  const questionEl = document.getElementById("question");
+  const answersEl = document.getElementById("answers");
+  const resultEl = document.getElementById("result");
+  const nextEl = document.getElementById("next");
+
+  function loadQuestion() {
+    const q = quizData[currentQuestion];
+    questionEl.textContent = q.question;
+    answersEl.innerHTML = "";
+    resultEl.textContent = "";
+
+    q.answers.forEach((answer, index) => {
+      const btn = document.createElement("button");
+      btn.textContent = answer;
+      btn.onclick = () => checkAnswer(index, btn);
+      answersEl.appendChild(btn);
+    });
+
+    next.style.display = "none";
+  }
+  function checkAnswer(selectedIndex, selectedBtn) {
+    const buttons = answersEl.querySelectorALL("button");
+    const correctIndex = quizData[currentQuestion].correct;
+
+    buttons.forEach((btn, idx) => {
+      btn.disabled = true;
+      if (idx === correctIndex) {
+        btn.classList.add("correct");
+      } else {
+        btn.classList.add("wrong");
+      }
+    });
+
+    if (selectedIndex == correctIndex) {
+      resultEl.textContend = "Correct!";
+      score++;
+    } else {
+      resultEl.textContent = "Incorrect!";
+    }
+    next.style.display = "inline-block";
+  }
+  next.onclick = () => {
+    currecntQuestion++;
+    if (currentQuestion < quizData.length) {
+      loadQuestion();
+    } else {
+      showFinalResult();
+    }
+  };
+
+  function showFinalResult() {
+    questionEl.textContent = `Quiz Conplete! You scored ${score} out of ${quizData.length}.`;
+    answersEl.innerHTML = "";
+    resultEl.textContent = "";
+    next.style.display = "none";
+  }
+  
+  loadQuestion();
+</script>
+
 <div class="footer">
   <p>By: Leslie Gachanja</p>
 </div>
