@@ -17,16 +17,6 @@
 .container > div.content {
   grid-area: content;
 }
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 .quiz-container {
   background: #2E5984;
   padding: 30px;
@@ -38,6 +28,8 @@ body {
   grid-template-rows: auto auto auto auto;
   gap: 20px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .question {
   font-size: 22px;
