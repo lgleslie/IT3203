@@ -16,9 +16,11 @@
 }
 .container > div.content {
   grid-area: content;
-}
+  *{
+    box-sizing: border-box;
+  }
 .quiz-container {
-  background: white;
+  background: #2E5984;
   padding: 30px;
   border-radius: 20px
   box-shadow:0 8px 20px rgba(0, 0, 0, 0.15);
@@ -27,11 +29,10 @@
   grid-template-row: auto auto auto auto;
   gap: 20px;
   text-align: center;
-  align-items: center;
 }
 .question {
   font-size: 22px;
-  color: DarkGray;
+  color: white;
 }
 .answers {
   display: grid;
