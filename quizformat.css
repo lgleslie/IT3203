@@ -27,6 +27,7 @@
   width: 100%;
   text-align: center;
   display: none;
+  color: FloralWhite;
 }
 .start-container.active, .quiz-container.active {
   display: block;
