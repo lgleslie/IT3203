@@ -19,7 +19,6 @@
 }
 .quiz-container {
   background: #50C878;
-  font-family: "Times New Roman";
   margin: auto;
   padding: 30px;
   border-radius: 20px;
@@ -32,6 +31,7 @@
   text-align: center;
 }
 .question {
+  font-family: "Times New Roman";
   font-size: 22px;
   color: white;
 }
