@@ -73,8 +73,9 @@
 
     next.style.display = "none";
   }
+  
   function checkAnswer(selectedIndex, selectedBtn) {
-    const buttons = answersEl.querySelectorALL("button");
+    const buttons = answersEl.querySelectorAll("button");
     const correctIndex = quizData[currentQuestion].correct;
 
     buttons.forEach((btn, idx) => {
