@@ -28,12 +28,19 @@
     <p>Test your knowlege with this quiz. It is a combination of questions about HTML and CSS. Study hard and Good Luck!</p>
   </div> 
 </div>
+
+<div class="start-container active" id="startContainer">
+  <h2>Time to take the Quiz!</h2>
+  <p>Test youself on the HTML and CSS basics to see what you know.</p>
+  <button id="start">Start Quiz</button>
+</div>
   
-<div class="quiz-container">
+<div class="quiz-container" id="quizContainer">
   <div id="question" class="question"></div>
   <div id="answers" class="answers"></div>
   <div id="result"></div>
   <button id="next">Next Question</button>
+  <button id="redo">Retake Quiz</button>
 </div>
   
 <script>
@@ -53,11 +60,28 @@
   let currentQuestion = 0;
   let score = 0;
 
+  const startContainer = document.getElementById("startContainer");
+  const start = document.getElementById("start");
+  const quizContainer = document.getElementById("quizcontainer");
   const questionEl = document.getElementById("question");
   const answersEl = document.getElementById("answers");
   const resultEl = document.getElementById("result");
   const next = document.getElementById("next");
+  const redo = document.getElementById("redo");
 
+  start.addEventListener("clock", () => {
+    startContainer.classLister.("active");
+    quizContainer.classList.add("active");
+    loadQuestion();
+  });
+
+  redo.addEventListener("click", () => {
+    currentQuestion = 0;
+    score = 0;
+    redo.style.display = "none";
+    loadQuestion();
+  });
+  
   function loadQuestion() {
     const q = quizData[currentQuestion];
     questionEl.textContent = q.question;
@@ -109,9 +133,8 @@
     answersEl.innerHTML = "";
     resultEl.textContent = "";
     next.style.display = "none";
+    redo.style.display = "inline-block";
   }
-  
-  loadQuestion();
 </script>
 
 <div class="footer">
