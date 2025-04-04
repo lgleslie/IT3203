@@ -17,7 +17,7 @@
 .container > div.content {
   grid-area: content;
 }
-.quiz-container, start-container {
+.quiz-container, .start-container {
   background-color: #333;
   margin: auto;
   padding: 30px;
@@ -64,7 +64,7 @@
   font-weight: bold;
   color: white;
 }
-#next, #start {
+#next, #start, #redo {
   padding: 10px 20px;
   font-family: "Times New Roman";
   font-size: 16x;
@@ -73,11 +73,12 @@
   background-color: #6082B6;
   color: white;
   curser: pointer;
+  margin-top: 10px;
 }
-#next:hover, #start:hover {
+#next:hover, #start:hover, #redo:hover {
   background-color: #0F52BA;
 }
-#next {
+#next, #redo {
   display: none;
 }
 * {
