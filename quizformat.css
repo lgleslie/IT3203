@@ -18,7 +18,8 @@
   grid-area: content;
 }
 .quiz-container {
-  background: #000080;
+  background: #50C878;
+  font-family: "Times New Roman";
   margin: auto;
   padding: 30px;
   border-radius: 20px;
@@ -54,7 +55,7 @@
 .answers button.correct {
   background-color: #CAEEC2 !important;
 }
-.answers button.wrong {
+.answers button.incorrect {
   background-color: #D7707E !important;
 } 
 #result {
