@@ -18,7 +18,7 @@
   grid-area: content;
 }
 .quiz-container {
-  background: #2E5984;
+  background: #000080;
   margin: auto;
   padding: 30px;
   border-radius: 20px;
@@ -60,6 +60,7 @@
 #result {
   font-size: 18px;
   font-weight: bold;
+  color: white;
 }
 #next {
   padding: 10px 20px;
