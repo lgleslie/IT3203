@@ -55,10 +55,10 @@
   background-color: Gray;
 }
 .answers button.correct {
-  background-color: #CAEEC2 !important;
+  background-color: #ccffcc !important;
 }
 .answers button.incorrect {
-  background-color: #D7707E !important;
+  background-color: #ffcccc !important;
 } 
 #result {
   font-size: 18px;
