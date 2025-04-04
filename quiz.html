@@ -62,15 +62,15 @@
 
   const startContainer = document.getElementById("startContainer");
   const start = document.getElementById("start");
-  const quizContainer = document.getElementById("quizcontainer");
+  const quizContainer = document.getElementById("quizContainer");
   const questionEl = document.getElementById("question");
   const answersEl = document.getElementById("answers");
   const resultEl = document.getElementById("result");
   const next = document.getElementById("next");
   const redo = document.getElementById("redo");
 
-  start.addEventListener("clock", () => {
-    startContainer.classLister.("active");
+  start.addEventListener("click", () => {
+    startContainer.classLister.remove("active");
     quizContainer.classList.add("active");
     loadQuestion();
   });
