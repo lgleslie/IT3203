@@ -151,7 +151,7 @@
       const submit = document.createElement("button");
       submit.textContent = "Submit";
       submit.onclick = () => {
-        const checked = Array.from(answersEl.quertSelectorAll("input[type=checkbox]:checked")).map(cb => parseInt(cb.value));
+        const checked = Array.from(answersEl.querySelectorAll("input[type=checkbox]:checked")).map(cb => parseInt(cb.value));
         userAnswers.push(checked);
         if(JSON.stringify(checked.sort()) === JSON.stringify(q.correct.sort())) score++;
         next.style.display = "inline-block";
