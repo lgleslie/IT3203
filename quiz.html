@@ -182,13 +182,13 @@
 
     quizData.forEach((q, i) => {
       const item = document.createElement("li");
-      const userAnswer = userAnswers[i];
       let correctDisplay = "";
+      
       if (q.type === "text") {
         correctDisplay = q.correctText;
       } else if (q.type === "multiple") {
-        correctDisplay = q.correct.map(idx => q.answers[idx]).join(", ");
-      } else {
+        correctDisplay = q.correct.map(index => q.answers[index]).join(", ");
+      } else if (q.type === "single") {
         correctDisplay = q.answers[q.correct];
       }
       item.innerHTML = `<strong>Q${i + 1}:</strong>${q.question}<br><em>Correct Answer:</em> ${correctDisplay}`;
