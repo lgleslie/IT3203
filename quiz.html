@@ -189,9 +189,9 @@
       } else if (q.type === "multiple") {
         correctDisplay = q.correct.map(index => q.answers[index]).join(", ");
       } else if (q.type === "single") {
-        correctDisplay = q.answers[q.correct];
+        correctDisplay = escapeHtml(q.answers[q.correct]);
       }
-      item.innerHTML = `<strong>Q${i + 1}:</strong>${q.question}<br><em>Correct Answer:</em> ${correctDisplay}`;
+      item.innerHTML = `<strong>Q${i + 1}:</strong>${q.question}<br>` + `<em>Correct Answer:</em> ${correctDisplay}`;
       summaryList.appendChild(item);
     });
 
@@ -200,6 +200,9 @@
 
     next.style.display = "none";
     redo.style.display = "inline-block";
+  }
+  function escapeHtml(text) {
+    return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 </script>
 
