@@ -187,7 +187,7 @@
       if (q.type === "text") {
         correctDisplay = q.correctText;
       } else if (q.type === "multiple") {
-        correctDisplay = q.correct.map(index => q.answers[index]).join(", ");
+        correctDisplay = q.correct.map(index => escapeHtml(q.answers[index])).join(", ");
       } else if (q.type === "single") {
         correctDisplay = escapeHtml(q.answers[q.correct]);
       }
