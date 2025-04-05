@@ -85,7 +85,7 @@
     startContainer.classList.remove("active");
     quizContainer.classList.add("active");
     loadQuestion();
-  });
+  };
 
   redo.onclick = () => {
     currentQuestion = 0;
@@ -93,7 +93,7 @@
     userAnswers = [];
     redo.style.display = "none";
     loadQuestion();
-  });
+  };
   
   function loadQuestion() {
     const q = quizData[currentQuestion];
