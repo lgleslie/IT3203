@@ -47,11 +47,13 @@
   const quizData = [
     {
       question: "What does HTML stand for?",
+      type: "single",
       answers: ["Hyper Text Markup Language", "Option 2", "Option 3", "Option 4"],
       correct: 0
     },
     {
       question: "Which tag is used to make text bold?",
+      type: "single",
       answers: ["<stong>", "<em>", "<bold", "<bld>"],
       correct: 0
     },
@@ -139,12 +141,13 @@
         lable.htmlFor = `chk${index}`;
         label.textContent = answer;
 
-        const wrapper = document.creatElement("div");
+        const wrapper = document.createElement("div");
         wrapper.appendChild(checkbox);
         wrapper.appendChild(label);
 
         answersEl.appendChild(wrapper);
       });
+      
       const submit = document.createElement("button");
       submit.textContent = "Submit";
       submit.onclick = () => {
@@ -155,8 +158,10 @@
       };
       answersEl.appendChild(submit);
     }
+    
     next.style.display = "none";
   }
+  
   next.onclick = () => {
     currentQuestion++;
     if (currentQuestion < quizData.length) {
@@ -169,7 +174,7 @@
   function showFinalResult() {
     const passed = score >= Math.ceil(quizData.length / 2);
     questionEl.textContent = `Quiz Conplete! You scored ${score} out of ${quizData.length}.`;
-    resultEl.innerHTML = `<p>${passed ? "You passed!" : "You did not pass."}</p>`;
+    resultEl.innerHTML = `<p>${passed ? "You passed, Good Job!" : "You did not pass. Keep Studying."}</p>`;
 
     const summaryList = document.createElement("ul");
     summaryList.style.textAlign = "left";
