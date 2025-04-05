@@ -108,10 +108,10 @@
       const btn = document.createElement("button");
       btn.textContent = answer;
       btn.onclick = () => {
-        Array.from(answersEl.querySelectorAll("button")).forEach(b=> b.classList.remove("selected"));
+        Array.from(answersEl.querySelectorAll("button")).forEach(b => b.classList.remove("selected"));
         btn.classList.add("selected");
         userAnswers.push(index);
-        if(index === q.correct) score++;
+        if (index === q.correct) score++;
         next.syle.display = "inline-block";
       };
       answersEl.appendChild(btn);
