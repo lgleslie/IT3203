@@ -38,7 +38,7 @@
 }
 .answers {
   text-align:left;
-  margin-top: 15px
+  margin-top: 15px;
 }
 .answers button, .answers input[type="text"] {
   background-color: #f0f0f0;
@@ -47,22 +47,21 @@
   border-radius: 8px;
   font-family: "Times New Roman";
   font-size: 16px;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-.answers button:hover:not(:disabled) {
-  background-color: Gray;
 } 
 .answers button.selected {
   background-color: Gray;
+  color: white;
 }
 #result {
   font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
-  color: white;
+  color: black;
 }
 #next, #start, #redo {
+  margin-top: 20px;
   padding: 10px 20px;
   font-family: "Times New Roman";
   font-size: 16x;
@@ -71,7 +70,6 @@
   background-color: #6082B6;
   color: white;
   cursor: pointer;
-  margin-top: 20px;
 }
 #next:hover, #start:hover, #redo:hover {
   background-color: #0F52BA;
