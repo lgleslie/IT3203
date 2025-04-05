@@ -132,7 +132,7 @@
       };
       answersEl.appendChild(submit);
     } else if (q.type === "multiple") {
-      const selected = [];
+      const selected = new Set();
       q.answers.forEach((answer, index) => {
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -155,6 +155,8 @@
             selected.delete(index);
             wrapper.classList.remove("selected);
           }
+        });
+        
         answersEl.appendChild(wrapper);
       });
       
