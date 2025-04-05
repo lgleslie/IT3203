@@ -55,14 +55,8 @@
   cursor: pointer;
 } 
 .answers button.selected {
-  background-color: Gray;
+  background-color: #d3d3f0;
   color: black;
-
-.answers div.selected {
-  background-color: Gray;
-  color: black;
-  padding: 10px
-  border-radius: 5px;
 }
 #result {
   font-size: 18px;
