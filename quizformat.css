@@ -41,6 +41,9 @@
   grid-template-columns: 1fr;
   gap: 10px;
 }
+.answers button:hover:not(:disabled) {
+      background-color: #d3d3f0;
+ }
 .answers button, .answers input[type="text"] {
   background-color: #f0f0f0;
   border: none;
