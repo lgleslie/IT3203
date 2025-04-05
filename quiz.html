@@ -54,11 +54,23 @@
       question: "Which tag is used to make text bold?",
       answers: ["<stong>", "<em>", "<bold", "<bld>"],
       correct: 0
+    },
+    {
+      question: "Fill in the black: CSS is used for _______ web pages.",
+      type: "text",
+      correctText: "styling"
+    },
+    {
+      question: "Select all valid HTML tags:",
+      type: "multiple",
+      answers: ["<div>", "<foo>", "<span>", "<selection>"],
+      correct: [0, 2, 3]
     }
   ];
   
   let currentQuestion = 0;
   let score = 0;
+  let userAnswers = [];
 
   const startContainer = document.getElementById("startContainer");
   const start = document.getElementById("start");
@@ -69,15 +81,16 @@
   const next = document.getElementById("next");
   const redo = document.getElementById("redo");
 
-  start.addEventListener("click", () => {
+  start.onclick = () => {
     startContainer.classList.remove("active");
     quizContainer.classList.add("active");
     loadQuestion();
   });
 
-  redo.addEventListener("click", () => {
+  redo.onclick = () => {
     currentQuestion = 0;
     score = 0;
+    userAnswers = [];
     redo.style.display = "none";
     loadQuestion();
   });
@@ -88,36 +101,61 @@
     answersEl.innerHTML = "";
     resultEl.textContent = "";
 
-    q.answers.forEach((answer, index) => {
+    if (q.type === "single") {
+      q.answers.forEach((answer, index) => {
       const btn = document.createElement("button");
       btn.textContent = answer;
-      btn.onclick = () => checkAnswer(index, btn);
+      btn.onclick = () => {
+        userAnswers.push(index);
+        if(index === q.correct) score++;
+        next.syle.display = "inline-block";
+      };
       answersEl.appendChild(btn);
     });
+  } else if (q.type === "text") {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Type your answer here";
+      answersEl.appendChild(input);
 
-    next.style.display = "none";
-  }
-  
-  function checkAnswer(selectedIndex, selectedBtn) {
-    const buttons = answersEl.querySelectorAll("button");
-    const correctIndex = quizData[currentQuestion].correct;
+      const submit = document.createElement("button");
+      submit.textContent = "Submit";
+      submit.onclick = () => {
+        const userInput = input.value.trim().toLowerCase();
+        userAnswers.push(userInput);
+        if (userInput === q.correctText.toLowerCase()) score++;
+        next.style.display = "inline-block";
+      };
+      answersEl.appendChild(submit);
+    } else if (q.type === "multiple") {
+      const selected = [];
+      q.answers.forEach((answer, index) => {
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = `chk${index}`;
+        checkbox.value = index;
 
-    buttons.forEach((btn, idx) => {
-      btn.disabled = true;
-      if (idx === correctIndex) {
-        btn.classList.add("correct");
-      } else {
-        btn.classList.add("incorrect");
-      }
-    });
+        const lable = document.createElement("label");
+        lable.htmlFor = `chk${index}`;
+        label.textContent = answer;
 
-    if (selectedIndex === correctIndex) {
-      resultEl.textContent = "Correct!";
-      score++;
-    } else {
-      resultEl.textContent = "Incorrect!";
+        const wrapper = document.creatElement("div");
+        wrapper.appendChild(checkbox);
+        wrapper.appendChild(label);
+
+        answersEl.appendChild(wrapper);
+      });
+      const submit = document.createElement("button");
+      submit.textContent = "Submit";
+      submit.onclick = () => {
+        const checked = Array.from(answersEl.querySelectorAll("input[type=checkbox]:checked")).map(cb => parseINT(cb.value));
+        userAnswers.push(checked);
+        if(JSON.stringify(checked.sort()) === JSON.stringify(q.correct.sort())) score++;
+        next.style.display = "inline-block";
+      };
+      answersEl.appendChild(submit);
     }
-    next.style.display = "inline-block";
+    next.style.display = "none";
   }
   next.onclick = () => {
     currentQuestion++;
@@ -127,11 +165,34 @@
       showFinalResult();
     }
   };
-
+  
   function showFinalResult() {
+    const passed = score >= Math.ceil(quizData.length / 2);
     questionEl.textContent = `Quiz Conplete! You scored ${score} out of ${quizData.length}.`;
+    resultEl.innerHTML = `<p>${passed ? "You passed!" : "You did not pass."}</p>`;
+
+    const summaryList = document.createElement("ul");
+    summaryList.style.textAlign = "left";
+    summaryList.style.marginTop = "20px";
+
+    quizData.forEach((q, i) => {
+      const item = document.createElement("li");
+      const userAnswer = userAnswers[i];
+      let correctDisplay = "";
+      if (q.type === "text") {
+        correctDisplay = q.correctText;
+      } else if (q.type === "multiple") {
+        correctDisplay = q.correct.map(idx => q.answers[idx]).join(", ");
+      } else {
+        correctDisplay = q.answers[q.correct];
+      }
+      item.innerHTML = `<strong>Q${i + 1}:</strong>${q.question}<br><em>Correct Answer:</em> ${correctDisplay}`;
+      summaryList.appendChild(item);
+    });
+
     answersEl.innerHTML = "";
-    resultEl.textContent = "";
+    answersEl.appendChild(summaryList);
+
     next.style.display = "none";
     redo.style.display = "inline-block";
   }
