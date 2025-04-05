@@ -108,8 +108,6 @@
       const btn = document.createElement("button");
       btn.textContent = answer;
       btn.onclick = () => {
-        Array.from(answersEl.querySelectorAll("button")).forEach(b => b.classList.remove("selected"));
-        btn.classList.add("selected");
         userAnswers.push(index);
         if (index === q.correct) score++;
         next.syle.display = "inline-block";
@@ -132,7 +130,7 @@
       };
       answersEl.appendChild(submit);
     } else if (q.type === "multiple") {
-      const selected = new Set();
+      const selected = [];
       q.answers.forEach((answer, index) => {
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -147,23 +145,13 @@
         wrapper.appendChild(checkbox);
         wrapper.appendChild(label);
 
-        checkbox.addEventListener("change", () => {
-          if (checkbox.checked) {
-            selected.add(index);
-            wrapper.classList.add("selected");
-          } else {
-            selected.delete(index);
-            wrapper.classList.remove("selected);
-          }
-        });
-        
         answersEl.appendChild(wrapper);
       });
       
       const submit = document.createElement("button");
       submit.textContent = "Submit";
       submit.onclick = () => {
-        const checked = Array.from(selected);
+        const checked = Array.from(answersEl.quertSelectorAll("input[type=checkbox]:checked")).map(cb => parseInt(cb.value));
         userAnswers.push(checked);
         if(JSON.stringify(checked.sort()) === JSON.stringify(q.correct.sort())) score++;
         next.style.display = "inline-block";
