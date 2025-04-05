@@ -108,6 +108,8 @@
       const btn = document.createElement("button");
       btn.textContent = answer;
       btn.onclick = () => {
+        Array.from(answersEl.querySelectorAll("button")).forEach(b=> b.classList.remove("selected"));
+        btn.classList.add("selected");
         userAnswers.push(index);
         if(index === q.correct) score++;
         next.syle.display = "inline-block";
@@ -145,13 +147,21 @@
         wrapper.appendChild(checkbox);
         wrapper.appendChild(label);
 
+        checkbox.addEventListener("change", () => {
+          if (checkbox.checked) {
+            selected.add(index);
+            wrapper.classList.add("selected");
+          } else {
+            selected.delete(index);
+            wrapper.classList.remove("selected);
+          }
         answersEl.appendChild(wrapper);
       });
       
       const submit = document.createElement("button");
       submit.textContent = "Submit";
       submit.onclick = () => {
-        const checked = Array.from(answersEl.querySelectorAll("input[type=checkbox]:checked")).map(cb => parseINT(cb.value));
+        const checked = Array.from(selected);
         userAnswers.push(checked);
         if(JSON.stringify(checked.sort()) === JSON.stringify(q.correct.sort())) score++;
         next.style.display = "inline-block";
