@@ -52,7 +52,7 @@
 } 
 .answers button.selected {
   background-color: Gray;
-  color: white;
+  color: black;
 }
 #result {
   font-size: 18px;
