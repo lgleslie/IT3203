@@ -37,7 +37,10 @@
   color: black;
 }
 .answers {
-  text-align:left;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  text-align: left;
   margin-top: 15px;
 }
 .answers button, .answers input[type="text"] {
