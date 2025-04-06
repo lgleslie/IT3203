@@ -179,7 +179,7 @@
   
   function showFinalResult() {
     const passed = score >= Math.ceil(quizData.length / 2);
-    questionEl.textContent = `Quiz Conplete! You scored ${score} out of ${quizData.length}.`;
+    questionEl.textContent = `Quiz Complete! You scored ${score} out of ${quizData.length}.`;
     resultEl.innerHTML = `<p>${passed ? "You passed, Good Job!" : "You did not pass. Keep Studying."}</p>`;
 
     const summaryList = document.createElement("ul");
