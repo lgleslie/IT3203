@@ -29,6 +29,7 @@ body {
   text-align: center;
   display: none;
   color: black;
+  gap: 15px;
 }
 .start-container.active, .quiz-container.active {
   display: block;
