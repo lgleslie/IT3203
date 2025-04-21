@@ -18,6 +18,9 @@
 .container > div.content {
   grid-area: content;
 }
+.container > div.content p {
+  font-size: 15px;
+}
 * {
   box-sizing: border-box;
 }
