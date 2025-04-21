@@ -1,9 +1,11 @@
+body {
+  margin: 0;
+  background-color: LightGray;
+}
 .container {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: 50px;
-  background-color: LightGray;
-  padding: 50px;
+  min-height: 100px;
 }
 main {
   display: flex;
