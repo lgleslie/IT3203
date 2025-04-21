@@ -1,25 +1,20 @@
 .container {
   display: grid;
-  grid-template-areas:
-    "menu content";
-  grid-template-columns: 1fr 3fr;
-  gap: 5px;
+  grid-template-rows: auto 1fr auto;
+  gap: 50px;
   background-color: LightGray;
-  padding: 5px;
+  padding: 50px;
 }
-.container > div {
-  background-color: White;
-  padding: 10px;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 25px;
 }
-.container > div.menu {
-  grid-area: menu;
-  text-align: center;
-}
-.container > div.content {
-  grid-area: content;
-}
-.container > div.content p {
-  font-size: 15px;
+.card {
+  background: white;
+  padding: 25px;
+  margin-top: 20px;
 }
 * {
   box-sizing: border-box;
@@ -44,7 +39,6 @@ body {
   padding: 14px 16px;
   text-decoration: none;
 }
-  
 .topnav a:hover {
   background-color: #ddd;
   color: black;
