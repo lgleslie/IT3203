@@ -13,6 +13,7 @@
 }
 .container > div.menu {
   grid-area: menu;
+  text-align: center;
 }
 .container > div.content {
   grid-area: content;
