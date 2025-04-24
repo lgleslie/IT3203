@@ -32,6 +32,7 @@ main {
 .p {
   font-size: 20px;
   max-inline-size: 80%;
+  text-align: center;
 }
 * {
   box-sizing: border-box;
