@@ -30,7 +30,7 @@ main {
 }
 .p {
   font-size: 20px;
-  max-inline-size: 20%;
+  max-inline-size: 80%;
 }
 * {
   box-sizing: border-box;
