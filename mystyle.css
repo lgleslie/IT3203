@@ -28,6 +28,9 @@ main {
   text-align: center;
   font-size: 30px;
 }
+.p {
+  font-size: 20px;
+
 * {
   box-sizing: border-box;
 }
