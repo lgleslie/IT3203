@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #2C2E3A;
+  background-color: #ADBBDA;
 }
 .container {
   display: grid;
@@ -39,14 +39,14 @@ body {
   margin: 0;
 }
 .header {
-  background-color: #0A21C0;
+  background-color: #EDE8F5;
   padding: 20px;
   text-align: center;
-  color: #B3B4BD;
+  color: #3D52A0;
 }
 .topnav {
   overflow: hidden;
-  background-color: #050a44;
+  background-color: #3D52A0;
 }
 .topnav a {
   float: left;
