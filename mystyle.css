@@ -39,10 +39,10 @@ body {
   margin: 0;
 }
 .header {
-  background-color: #0A21C0;
+  background-color: #B3B4BD;
   padding: 20px;
   text-align: center;
-  color: #B3B4BD;
+  color: #0A21C0;
 }
 .topnav {
   overflow: hidden;
