@@ -45,6 +45,11 @@ ul li {
   font-size: 18px;
   color: #3D52A0;
 }
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 * {
   box-sizing: border-box;
 }
