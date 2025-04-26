@@ -28,9 +28,11 @@ main {
 .h2 {
   text-align: center;
   font-size: 30px;
+  color: #3D52A0;
 }
 .p {
-  font-size: 20px;
+  font-size: 18px;
+  color: #3D52A0;
 }
 * {
   box-sizing: border-box;
