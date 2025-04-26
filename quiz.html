@@ -4,7 +4,74 @@
 <title>HTML Site</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="quizformat.css">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+.quiz-container, .start-container {
+  background: white;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: none;
+  color: black;
+  gap: 15px;
+}
+.start-container.active, .quiz-container.active {
+  display: block;
+}
+.question {
+  font-size: 22px;
+  color: black;
+}
+.answers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.answers button:hover:not(:disabled) {
+      background-color: #d3d3f0;
+ }
+.answers button, .answers input[type="text"] {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+} 
+.answers button.selected {
+  background-color: #d3d3f0;
+  color: black;
+}
+#result {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: black;
+}
+#next, #start, #redo {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-family: "Times New Roman";
+  font-size: 16x;
+  border: none;
+  border-radius: 8px;
+  background-color: #6082B6;
+  color: white;
+  cursor: pointer;
+}
+#next:hover, #start:hover, #redo:hover {
+  background-color: #0F52BA;
+}
+#next, #redo {
+  display: none;
+}
+</style>
 </head>
 <body>
   
