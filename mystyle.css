@@ -1,8 +1,6 @@
 body {
   margin: 0;
   background-color: #ADBBDA;
-}
-.container {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100px;
