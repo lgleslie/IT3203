@@ -7,7 +7,8 @@
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <style>
 .round {
-  border: 2px #3D52A0;
+  border: 2px;
+  border-color: #3D52A0;
   border-radius: 8px;
   padding: 5px;
 }
@@ -58,7 +59,7 @@
         allows styling for that particular page. This method is useful for single-page sites but still become
         disorganized if overused.</p>
         <p class="p">Here is an example of Internal CSS</p>
-        <p class="round" style="font-size:20px;color:#3D52A0;">&lt;style&gt;<br>body &#123;<br> background-color&#58; green&#59; <br>&#125;</p>
+        <p class="round" style="font-size:20px;color:#3D52A0;">&lt;style&gt;<br>body &#123;<br> background-color&#58; green&#59; <br>&#125;<br>&lt;/style&gt;</p>
         
         <p class="p">The most effective and commonly used approch is external CSS, where styles 
         are stored in a separate css file and linked to HTML documents using a link tag. This approach promotes 
