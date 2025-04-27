@@ -46,12 +46,6 @@ ul li {
   clear: both;
   display: table;
 }
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-}
 .header {
   background-color: #EDE8F5;
   padding: 20px;
