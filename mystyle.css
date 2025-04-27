@@ -75,16 +75,3 @@ ul li {
   text-align: center;
   color: #3D52A0;
 }
-/* Media Queries for three screen sizes */ 
-@media only screen and (max-width: 600px) {
-  .header {font-size: 1.2rem;}
-  .topnav {flex-direction: column / span 1; align-items: center; font-size: 0.9rem;}
-  main {padding: 1rem;}
-}
-@media only screen and (min-width: 600px) {
-  .topnav {flex-direction: column / span 1; align-items: center;}
-  .topnav a {margin: 0.5rem 0;}
-}
-@media only screen and (min-width: 768px) {
-  .topnav a {margin: 0 0.5rem; font-size: 1rem;}
-}
