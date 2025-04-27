@@ -2,13 +2,13 @@ body {
   margin: 0;
   background-color: #ADBBDA;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
   min-height: 100px;
 }
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   padding: 25px 25px;
 }
 .card {
@@ -53,16 +53,17 @@ ul li {
   color: #3D52A0;
 }
 .topnav {
-  overflow: hidden;
   background-color: #3D52A0;
+  display: flex;
+  justify-content: center;
+  padding: 14px 16px;
+
 }
 .topnav a {
   float: left;
-  display: block;
   color: #f2f2f2;
   font-size: 18px;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
 .topnav a:hover {
