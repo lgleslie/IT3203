@@ -49,8 +49,7 @@ ul li {
   display: table;
 }
 p.round3 {
-  border: 2px;
-  border-color: #3D52A0;
+  border: 2px solid red;
   border-radius: 8px;
   padding: 5px;
   font-size: 20px;
