@@ -48,7 +48,7 @@ ul li {
   clear: both;
   display: table;
 }
-.round {
+p.round3 {
   border: 2px;
   border-color: #3D52A0;
   border-radius: 8px;
