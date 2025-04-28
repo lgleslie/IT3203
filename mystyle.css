@@ -77,12 +77,12 @@ ul li {
 }
 /* Media Queries for three screen sizes */ 
 @media (max-width: 480px) {
+  .topnav {flex-direction: column; align-items: center;}
   .header {font-size: 1.2rem;}
-  .topnav {font-size:0.9rem;}
   .main {padding: 1rem;}
 }
 @media (max-width: 768px) {
-  .topnav {flex-direction: column; align-items: center;}
+  .topnav {font-size:0.9rem;}
   .topnav a {margin: 0.5rem 0;}
 }
 @media (max-width: 1024px) {
