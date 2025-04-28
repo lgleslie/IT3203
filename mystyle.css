@@ -90,7 +90,8 @@ ul li {
 @media (max-width: 768px) {
   .topnav {
     flex-direction: column; 
-    align-items: right;
+    align-items: center;
+    float: left;
   }
   .topnav a {
     margin: 0.5rem 0;
