@@ -40,6 +40,10 @@ body {
   clear: both;
   display: table;
 }
+img {
+  display: block;
+  max-width: 100%;
+}
 .header {
   background-color: #EDE8F5;
   padding: 20px;
