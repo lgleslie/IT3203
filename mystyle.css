@@ -6,7 +6,7 @@ body {
   background-color: #ADBBDA;
   display: grid;
   grid-template-rows: auto auto 1fr;
-  min-height: 100vm;
+  min-height: 100vh;
 }
 .main {
   display: grid;
