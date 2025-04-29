@@ -183,6 +183,8 @@
       const btn = document.createElement("button");
       btn.textContent = answer;
       btn.onclick = () => {
+        Array.from(answersEl.querySelectorAll("button")).forEach.remove(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
         userAnswers.push(index);
         if (index === q.correct) score++;
         next.style.display = "inline-block";
