@@ -54,6 +54,7 @@ img {
   overflow: hidden;
   background-color: #3D52A0;
   display: flex;
+  flex-wrap: wrap;
 }
 .topnav a {
   float: left;
