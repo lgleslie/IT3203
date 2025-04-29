@@ -8,7 +8,6 @@ body {
   grid-template-rows: auto auto 1fr;
   min-height: 100vh;
   min-width: 100vh;
-  padding: 0px;
 }
 .main {
   display: grid;
@@ -47,7 +46,7 @@ img {
 }
 .header {
   background-color: #EDE8F5;
-  padding: 0px;
+  padding: 20px;
   text-align: center;
   color: #3D52A0;
 }
@@ -71,9 +70,10 @@ img {
 }
 .footer {
   background-color: #EDE8F5;
-  padding: 0px;
+  padding: 10px;
   text-align: center;
   color: #3D52A0;
+  font-size: 15px;
 }
 
 /* Media Queries for three screen sizes */ 
