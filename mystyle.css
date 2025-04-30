@@ -44,6 +44,7 @@ table, th, td {
   clear: both;
   display: table;
 }
+/* Im adding css into my images to make them adaptable to any screen device*/
 img {
   display: block;
   max-width: 100%;
@@ -72,6 +73,9 @@ img {
   background-color: #ddd;
   color: black;
 }
+/* I implementing the dropdown menu for when the screensize is too small for the full menu. */
+/* This will help keep the page looking organized and structured. */
+
 .dropdown-container {
   display: none;
   background-color: #3D52A0;
